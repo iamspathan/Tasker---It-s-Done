@@ -1,7 +1,7 @@
 
 <div align="center"
 
-# Tasker - Let's Do It ✔
+ <font size="6">Tasker - Let's Do It ✔</font>
 
 A Simple ToDo App 📝 built to demonstrate the use of modern android architecture component with MVVM Architecture 🏗. *Made with love ❤️ by [Sohail](https://github.com/iasmpathan)*
 
