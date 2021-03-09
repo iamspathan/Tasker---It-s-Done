@@ -7,4 +7,18 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+
+<!-- Custom App Theme Made By Saish Adlak (UI/UX Designer)-->
+
+    <color name="primaryColor">#151726</color>
+    <color name="primaryLightColor">#3c3d4e</color>
+    <color name="primaryDarkColor">#000000</color>
+    <color name="secondaryColor">#007aff</color>
+    <color name="secondaryLightColor">#69a8ff</color>
+    <color name="secondaryDarkColor">#004fcb</color>
+    <color name="primaryTextColor">#ffffff</color>
+    <color name="secondaryTextColor">#000000</color>
+
+
+
 </resources>
