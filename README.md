@@ -7,6 +7,7 @@ A Simple ToDo App 📝 built to demonstrate the use of modern android architectu
 
 [![codebeat badge](https://codebeat.co/badges/29c4e81e-f936-47a5-8d9f-2ac15cd9b13d)](https://codebeat.co/projects/github-com-iamspathan-tasker-it-s-done-development)
 [![Maintainability](https://api.codeclimate.com/v1/badges/fb21e9bcd76c6905d68f/maintainability)](https://codeclimate.com/github/iamspathan/Tasker---It-s-Done)
+![Build](https://github.com/iamspathan/Tasker---It-s-Done/actions/workflows/blank.yml/badge.svg)
 
 </div>
 
