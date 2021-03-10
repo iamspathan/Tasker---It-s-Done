@@ -13,6 +13,8 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import dagger.hilt.android.AndroidEntryPoint
 import dev.iamspathan.tasker.R
 import dev.iamspathan.tasker.databinding.FragmentTaskBinding
+import dev.iamspathan.tasker.ui.tasks.SortOrder.BY_DATE
+import dev.iamspathan.tasker.ui.tasks.SortOrder.BY_NAME
 import dev.iamspathan.tasker.util.onQueryTextChanged
 
 @AndroidEntryPoint
@@ -57,23 +59,21 @@ class TaskFragment : Fragment(R.layout.fragment_task) {
         return when(item.itemId){
 
             R.id.action_sort_by_name -> {
-
+                viewModel.sortOrder.value = BY_NAME
                 true
             }
 
             R.id.action_sort_by_date_created -> {
-
+                viewModel.sortOrder.value = BY_DATE
                 true
             }
 
             R.id.action_hide_completed_all_task -> {
-
-
+                item.isChecked = !item.isChecked
+                viewModel.hideCompleted.value = item.isChecked
                 true
             }
             else -> super.onOptionsItemSelected(item)
-
-
 
         }
 
