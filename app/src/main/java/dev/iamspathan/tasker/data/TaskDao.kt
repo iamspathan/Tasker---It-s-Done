@@ -21,10 +21,7 @@ interface TaskDao {
     @Delete
     suspend fun delete(task: Task)
 
-    @Query("SELECT * FROM task_table")
-    fun getTask(): Flow<List<Task>>
-
-
-
+    @Query("SELECT * FROM task_table WHERE name LIKE '%' || :searchQuery || '%'  ORDER BY important DESC")
+    fun getTask(searchQuery : String): Flow<List<Task>>
 
 }
