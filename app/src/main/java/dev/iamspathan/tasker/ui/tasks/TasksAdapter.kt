@@ -11,9 +11,31 @@ import dev.iamspathan.tasker.data.Task
 import dev.iamspathan.tasker.databinding.ItemTaskBinding
 import dev.iamspathan.tasker.ui.tasks.TasksAdapter.TaskViewHolder
 
-class TasksAdapter : ListAdapter<Task, TaskViewHolder>(DiffCallBack()) {
+class TasksAdapter(private val onItemClickListener: OnItemClickListener) : ListAdapter<Task, TaskViewHolder>(DiffCallBack()) {
 
-    class TaskViewHolder(private val binding: ItemTaskBinding) : RecyclerView.ViewHolder(binding.root) {
+   inner class TaskViewHolder(private val binding: ItemTaskBinding) : RecyclerView.ViewHolder(binding.root) {
+        init {
+
+            binding.apply {
+                root.setOnClickListener {
+                    val position = adapterPosition
+                    if (position != RecyclerView.NO_POSITION){
+                        val task = getItem(position)
+                        onItemClickListener.onItemClick(task)
+                    }
+
+                }
+
+                checkBoxCompleted.setOnClickListener {
+                    val position = adapterPosition
+                    if (position != RecyclerView.NO_POSITION){
+                        val task = getItem(position)
+                        onItemClickListener.onCheckBoxClick(task, checkBoxCompleted.isChecked)
+                    }
+                }
+            }
+
+        }
 
         fun bind(task: Task) {
             binding.apply {
@@ -42,5 +64,13 @@ class TasksAdapter : ListAdapter<Task, TaskViewHolder>(DiffCallBack()) {
 
         override fun areContentsTheSame(oldItem: Task, newItem: Task) =
             oldItem == newItem
+    }
+
+
+    interface OnItemClickListener {
+
+        fun onItemClick(task: Task)
+        fun onCheckBoxClick(task: Task, isChecked:Boolean)
+
     }
 }
